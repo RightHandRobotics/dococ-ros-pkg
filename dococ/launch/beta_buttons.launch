@@ -1,0 +1,5 @@
+<!-- nodes and parameters for reflex -->
+<launch>
+  <node name="buttons"          pkg="dococ"       type="read_serial.py"       output="screen" respawn="true"/>
+  <node name="wrapper"          pkg="dococ"       type="primitive_wrapper2.py"       output="screen" respawn="true"/>
+</launch>

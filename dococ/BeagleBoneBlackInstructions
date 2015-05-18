@@ -1,0 +1,29 @@
+My IP address was 10.26.92.11, then 10.26.92.13
+
+1) I got a BeagleBone Black, it came with a mini-USB cable
+2) How I connected to it
+    - Plugged the BBB into ethernet AND into Ubuntu via USB
+    - Connect to the BBB using 'screen /dev/ttyACM0 115200' from Ubuntu (this opens a serial connection to the BBB)
+    - Use 'ifconfig' over USB to get the eth0 IP address
+    - Close 'screen' program, ssh into the BBB using 'ssh root@eth0IPAddress', where eth0IPAddress is the IP address found using 'ifconfig' over serial
+3) Found the OS with 'lsb_release -a' (it was Debian Wheezy)
+4) Try doing sudo apt-get update and sudo apt-get upgrade. If you have massive problems with led_aging.sh like I did, follow the comment by Dirk Koopman: https://groups.google.com/forum/#!topic/beagleboard/LPjCn4LEY2I
+5) Started going through install instructions here: http://wiki.ros.org/indigo/Installation/Debian
+    - pip install wasn't working for me, but these directions worked: http://stackoverflow.com/questions/6012246/why-is-python-easy-install-not-working-on-my-mac
+    - the 'pip install -U stuff' line was failing for me because of egg_info errors, the comment by zakx here fixed that: https://stackoverflow.com/questions/17688082/error-installing-with-pip/19410374#19410374
+    - Note this note: "Note: Rosdep and apt-get may report that python-rosdep, python-catkin-pkg, python-rospkg, and python-rosdistro failed to install; however, you can ignore this error because they have already been installed with pip."
+    - If you ever want to install new packages, follow the instructions at the bottom of the ROS Debian install tutorial
+
+
+
+116  git clone https://eschneider1992@bitbucket.org/ljentoft/dococ.git
+117  git clone https://github.com/RightHandRobotics/reflex-sf-ros-pkg.git
+118  cdls ..
+119  catkin_make
+120  rosinstall_generator ros_comm dynamixel_motor --rosdistro indigo --deps --wet-only --exclude roslisp --tar > indigo-custom_ros.rosinstall
+121  wstool merge -t src indigo-custom_ros.rosinstall
+122  wstool update -t src
+123  rosdep install --from-paths src --ignore-src --rosdistro indigo -y -r --os=debian:wheezy
+124  sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/indigo
+
+Made reflex_sf/src/reflex_sf/__init__.py and moved all code a level down

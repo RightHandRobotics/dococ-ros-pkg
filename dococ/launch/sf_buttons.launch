@@ -1,0 +1,7 @@
+<!-- nodes and parameters for reflex -->
+<launch>
+    <include file="$(find reflex_sf)/launch/reflex_sf_fastbaud.launch"/>
+    <node name="expose_sf" pkg="reflex_sf" type="reflex_sf_hand.py"       output="screen" respawn="true"/>
+    <node name="buttons"   pkg="dococ"     type="raw_button_publisher.py" output="screen" respawn="true"/>
+    <node name="wrapper"   pkg="dococ"     type="sf_wrapper.py"           output="screen" respawn="true"/>
+</launch>
