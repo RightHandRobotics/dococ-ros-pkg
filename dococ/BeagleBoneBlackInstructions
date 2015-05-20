@@ -13,6 +13,7 @@ My IP address was 10.26.92.11, then 10.26.92.13
     - the 'pip install -U stuff' line was failing for me because of egg_info errors, the comment by zakx here fixed that: https://stackoverflow.com/questions/17688082/error-installing-with-pip/19410374#19410374
     - Note this note: "Note: Rosdep and apt-get may report that python-rosdep, python-catkin-pkg, python-rospkg, and python-rosdistro failed to install; however, you can ignore this error because they have already been installed with pip."
     - If you ever want to install new packages, follow the instructions at the bottom of the ROS Debian install tutorial
+    - At the end of the instructions, add "souce ~/catkin_ws/devel/setup.bash" to the .bashrc
 
 
 

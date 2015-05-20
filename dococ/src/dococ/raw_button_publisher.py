@@ -43,7 +43,7 @@ class RawButtonPublisher():
         try:
             self.arduino = serial.Serial('/dev/dococ_arduino', 115200)
             rospy.loginfo('Connection successful')
-        except SerialException:
+        except serial.SerialException:
             rospy.loginfo('Have you copied dococ/rules/99-dococ-devices.rules')
             rospy.loginfo('/into /etc/udev/rules.d/ ? Or maybe you are using')
             rospy.loginfo('an Arduino that is not an Uno? Your computer will')

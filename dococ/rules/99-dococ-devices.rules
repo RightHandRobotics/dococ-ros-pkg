@@ -2,3 +2,4 @@
 #       /etc/udev/rules.d/99-dococ-devices.rules
 
 SUBSYSTEMS=="usb", ATTRS{idProduct}=="0043", ATTRS{idVendor}=="2341", SYMLINK+="dococ_arduino"
+SUBSYSTEMS=="usb", ATTRS{idProduct}=="8037", ATTRS{idVendor}=="2341", SYMLINK+="dococ_arduino"

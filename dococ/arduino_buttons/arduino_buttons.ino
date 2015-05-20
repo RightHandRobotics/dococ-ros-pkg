@@ -26,11 +26,11 @@
 
 // constants won't change. They're used here to 
 // set pin numbers:
-const int buttonPin0 = 2;     // the number of the pushbutton pin
-const int buttonPin1 = 3;     // the number of the pushbutton pin
-const int buttonPin2 = 4;     // the number of the pushbutton pin
-const int buttonPin3 = 5;     // the number of the pushbutton pin
-const int buttonPin4 = 6;     // the number of the pushbutton pin
+const int buttonPin0 = 1;     // the number of the pushbutton pin
+const int buttonPin1 = 2;     // the number of the pushbutton pin
+const int buttonPin2 = 3;     // the number of the pushbutton pin
+const int buttonPin3 = 4;     // the number of the pushbutton pin
+const int buttonPin4 = 5;     // the number of the pushbutton pin
 const int sliderPin0 = A0;
 const int sliderPin1 = A1;
 const int sliderPin2 = A2;
